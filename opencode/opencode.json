@@ -24,5 +24,5 @@
   },
   "autoshare": false,
   "autoupdate": true,
-  "plugin": ["opencode-supermemory", "opencode-anthropic-auth"]
+  "plugin": ["opencode-anthropic-auth"]
 }
