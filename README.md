@@ -7,8 +7,8 @@ Personal dotfiles managed with symlinks.
 | Directory | Description |
 |-----------|-------------|
 | [nvim](./nvim) | Neovim config (LazyVim-based) |
-| [opencode](./opencode) | OpenCode config (custom commands, agents, theme) |
-| [claude](./claude) | Claude Code config (skills, settings) |
+| [claude](./claude) | Claude Code config (skills, settings) - **single source for shared skills** |
+| [opencode](./opencode) | OpenCode config (theme, providers) - commands symlink to claude/skills |
 
 ## Setup
 
@@ -18,12 +18,11 @@ git clone https://github.com/rcssdy/dotfiles.git ~/dotfiles
 
 # Create symlinks
 ln -s ~/dotfiles/nvim ~/.config/nvim
-ln -s ~/dotfiles/opencode ~/.config/opencode
 ln -s ~/dotfiles/claude ~/.claude
+ln -s ~/dotfiles/opencode ~/.config/opencode
 ```
 
 ## Post-Setup
 
 - **Neovim:** Launch `nvim` - plugins auto-install via Lazy.nvim
-- **OpenCode:** Create `~/.config/opencode/supermemory.jsonc` with your API key if using supermemory
 - **Claude Code:** Machine-specific permissions auto-created in `settings.local.json`

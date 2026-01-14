@@ -2,30 +2,25 @@
 
 Custom configuration for [OpenCode](https://opencode.ai/).
 
-## Custom Commands
+Skills are sourced from `claude/skills/` - OpenCode falls back to Claude's skill directory and commands symlink there.
 
-| Command | Purpose |
-|---------|---------|
-| `rmslop` | Clean up AI-generated boilerplate and enforce code style |
-| `supermemory-init` | Initialize supermemory plugin |
+## Commands
 
-## Custom Agents
-
-| Agent | Purpose |
-|-------|---------|
-| `changelog` | Generate release notes from git commits |
+| Command | Purpose | Source |
+|---------|---------|--------|
+| `ui-skills` | Opinionated constraints for building better interfaces | symlink |
+| `rmslop` | Remove AI-generated boilerplate and enforce code style | symlink |
 
 ## Config Structure
 
 ```
 opencode/
-├── opencode.json        # Main config (theme, providers, MCP servers)
+├── opencode.json        # Main config (theme, providers, MCP, plugins)
 ├── themes/cursor.json   # Custom theme
-├── command/             # Custom slash commands
-└── agent/               # Custom agents
+└── command/             # Symlinks to claude/skills/
 ```
 
 ## Notes
 
-- `supermemory.jsonc` is gitignored (contains API key) - create manually if needed
+- Commands symlink to `claude/skills/` for single source of truth
 - Theme based on Cursor editor dark theme
