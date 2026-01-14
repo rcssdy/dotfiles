@@ -1,0 +1,22 @@
+# Machine-specific
+settings.local.json
+
+# Session data
+history.jsonl
+stats-cache.json
+
+# Cache directories
+cache/
+debug/
+todos/
+telemetry/
+session-env/
+projects/
+file-history/
+paste-cache/
+image-cache/
+shell-snapshots/
+download/
+statsig/
+plugins/
+plans/
