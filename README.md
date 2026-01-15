@@ -13,13 +13,8 @@ Personal dotfiles managed with symlinks.
 ## Setup
 
 ```bash
-# Clone the repo
 git clone https://github.com/rcssdy/dotfiles.git ~/dotfiles
-
-# Create symlinks
-ln -s ~/dotfiles/nvim ~/.config/nvim
-ln -s ~/dotfiles/claude ~/.claude
-ln -s ~/dotfiles/opencode ~/.config/opencode
+cd ~/dotfiles && ./setup.sh
 ```
 
 ## Post-Setup
