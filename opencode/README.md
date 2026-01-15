@@ -10,6 +10,8 @@ Skills are sourced from `claude/skills/` - OpenCode falls back to Claude's skill
 |---------|---------|--------|
 | `ui-skills` | Opinionated constraints for building better interfaces | symlink |
 | `rmslop` | Remove AI-generated boilerplate and enforce code style | symlink |
+| `react-best-practices` | React/Next.js performance optimization guidelines | symlink |
+| `web-design-guidelines` | UI review for Web Interface Guidelines compliance | symlink |
 
 ## Config Structure
 

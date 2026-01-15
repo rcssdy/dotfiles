@@ -11,6 +11,8 @@ This is the **single source of truth** for skills shared between Claude Code and
 | `agent-browser` | Browser automation for testing and UI verification |
 | `ui-skills` | Opinionated constraints for building better interfaces |
 | `rmslop` | Remove AI-generated boilerplate and enforce code style |
+| `vercel-react-best-practices` | React/Next.js performance optimization guidelines |
+| `web-design-guidelines` | UI review for Web Interface Guidelines compliance |
 
 ## Config Structure
 
@@ -19,9 +21,11 @@ claude/
 ├── settings.json       # Main settings (plugins enabled)
 ├── commands/           # Custom commands
 └── skills/
-    ├── agent-browser/  # Browser automation (Claude-only)
-    ├── ui-skills/      # UI constraints (shared)
-    └── rmslop/         # Code cleanup (shared)
+    ├── agent-browser/                  # Browser automation (Claude-only)
+    ├── ui-skills/                      # UI constraints (shared)
+    ├── rmslop/                         # Code cleanup (shared)
+    ├── vercel-react-best-practices/    # React perf (shared)
+    └── web-design-guidelines/          # UI review (shared)
 ```
 
 ## Notes
