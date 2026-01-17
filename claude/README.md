@@ -2,17 +2,28 @@
 
 Custom configuration for [Claude Code](https://claude.ai/claude-code).
 
-This is the **single source of truth** for skills shared between Claude Code and OpenCode.
+## Skills Management
 
-## Skills
+**Custom skills** live here and are symlinked to both Claude Code and OpenCode.
+
+**Third-party skills** (like Vercel's) are managed via the [skills CLI](https://github.com/vercel-labs/agent-skills) and installed directly to agent config dirs.
+
+### Custom Skills (this repo)
 
 | Skill | Purpose |
 |-------|---------|
-| `agent-browser` | Browser automation for testing and UI verification |
-| `ui-skills` | Opinionated constraints for building better interfaces |
-| `rmslop` | Remove AI-generated boilerplate and enforce code style |
-| `vercel-react-best-practices` | React/Next.js performance optimization guidelines |
-| `web-design-guidelines` | UI review for Web Interface Guidelines compliance |
+| `agent-browser` | Browser automation via npx agent-browser |
+| `commit` | Conventional Commits helper |
+| `ui-skills` | Opinionated constraints for building interfaces |
+| `rmslop` | Remove AI-generated boilerplate |
+
+### Third-Party Skills (via CLI)
+
+```bash
+npx add-skill vercel-labs/agent-skills
+```
+
+Installs to `~/.claude/skills/` and `~/.config/opencode/skill/` directly.
 
 ## Config Structure
 
@@ -21,15 +32,14 @@ claude/
 ├── settings.json       # Main settings (plugins enabled)
 ├── commands/           # Custom commands
 └── skills/
-    ├── agent-browser/                  # Browser automation (Claude-only)
-    ├── ui-skills/                      # UI constraints (shared)
-    ├── rmslop/                         # Code cleanup (shared)
-    ├── vercel-react-best-practices/    # React perf (shared)
-    └── web-design-guidelines/          # UI review (shared)
+    ├── agent-browser/  # Symlinked to ~/.claude/skills/
+    ├── commit/         # Symlinked to ~/.claude/skills/
+    ├── rmslop/         # Symlinked to ~/.claude/skills/
+    └── ui-skills/      # Symlinked to ~/.claude/skills/
 ```
 
 ## Notes
 
 - `settings.local.json` is gitignored (machine-specific permissions)
-- OpenCode symlinks to skills here for `/command` access
 - Plugins, cache, history, and session data are gitignored
+- Custom skills are symlinked, not copied, so edits here propagate immediately
