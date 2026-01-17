@@ -87,6 +87,27 @@ return {
         desc = "Lists Diagnostics for all open buffers or a specific buffer",
       },
       {
+        "[d",
+        function()
+          vim.diagnostic.goto_prev()
+        end,
+        desc = "Go to previous diagnostic",
+      },
+      {
+        "]d",
+        function()
+          vim.diagnostic.goto_next()
+        end,
+        desc = "Go to next diagnostic",
+      },
+      {
+        "<leader>cd",
+        function()
+          vim.diagnostic.open_float()
+        end,
+        desc = "Show line diagnostics",
+      },
+      {
         ";s",
         function()
           local builtin = require("telescope.builtin")
