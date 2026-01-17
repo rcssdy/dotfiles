@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "cursor",
+  "theme": "tokyonight",
   "provider": {
     "moonshot": {
       "npm": "@ai-sdk/openai-compatible",

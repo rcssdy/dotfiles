@@ -1,13 +1,14 @@
 return {
   {
-    "ydkulks/cursor-dark.nvim",
+    "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      require("cursor-dark").setup({
-        style = "dark", -- use "dark-midnight" for the midnight variant
+      require("tokyonight").setup({
+        style = "night", -- options: "storm", "moon", "night", "day"
         transparent = false,
       })
+      vim.cmd.colorscheme("tokyonight")
     end,
   },
 }

@@ -30,6 +30,8 @@ Based on [LazyVim](https://www.lazyvim.org/) with customizations from [Takuya Ma
 | **nvim-treesitter** | `treesitter.lua` | Syntax highlighting and code parsing |
 | **nvim-lspconfig** | `lsp.lua` | Language server configurations |
 | **mason.nvim** | `lsp.lua` | Auto-install language servers and tools |
+| **octo.nvim** | `lazy.lua` (extra) | GitHub issues and PRs in Neovim |
+| **diffview.nvim** | `editor.lua` | Git diff and file history viewer |
 
 ## Keymaps
 
@@ -63,12 +65,64 @@ Based on [LazyVim](https://www.lazyvim.org/) with customizations from [Takuya Ma
 | `Tab` | Next tab |
 | `Shift+Tab` | Previous tab |
 
+### Git
+| Key | Action |
+|-----|--------|
+| `<leader>gd` | Open Diffview |
+| `<leader>gh` | File history (current file) |
+| `<leader>gH` | Branch history |
+| `<leader>gi` | GitHub issues (Octo) |
+| `<leader>gI` | Search GitHub issues |
+| `<leader>gp` | GitHub PRs (Octo) |
+| `<leader>gP` | Search GitHub PRs |
+
 ### Other
 | Key | Action |
 |-----|--------|
 | `Space o` | New line below (no auto-comment) |
 | `Space O` | New line above (no auto-comment) |
 | `gd` | Go to definition (via Telescope) |
+
+### In-File Navigation
+
+#### Basic motions
+| Key | Movement |
+|-----|----------|
+| `h j k l` | left, down, up, right |
+| `w` / `b` | next/prev word |
+| `e` | end of word |
+| `0` / `$` | start/end of line |
+| `^` | first non-blank char |
+| `gg` / `G` | top/bottom of file |
+| `{` / `}` | prev/next paragraph |
+| `%` | matching bracket |
+
+#### Jump to specific places
+| Key | Action |
+|-----|--------|
+| `:<number>` | go to line number |
+| `f<char>` | jump to next `<char>` on line |
+| `F<char>` | jump to prev `<char>` on line |
+| `t<char>` | jump to before `<char>` |
+| `;` / `,` | repeat f/t forward/backward |
+| `*` / `#` | next/prev occurrence of word under cursor |
+
+#### Screen movement
+| Key | Action |
+|-----|--------|
+| `Ctrl-d` / `Ctrl-u` | half-page down/up |
+| `Ctrl-f` / `Ctrl-b` | full page down/up |
+| `zz` | center cursor on screen |
+| `H` / `M` / `L` | top/middle/bottom of screen |
+
+#### Search
+| Key | Action |
+|-----|--------|
+| `/text` | search forward |
+| `?text` | search backward |
+| `n` / `N` | next/prev match |
+
+> **Tip:** Master `w`, `b`, `f`, `/`, and `Ctrl-d`/`Ctrl-u` first.
 
 ## LSP Servers Configured
 
@@ -95,12 +149,12 @@ nvim/
     ├── config/
     │   ├── autocmds.lua     # Auto-commands (disable concealing)
     │   ├── keymaps.lua      # Custom key mappings
-    │   ├── lazy.lua         # Lazy.nvim bootstrap
+    │   ├── lazy.lua         # Lazy.nvim bootstrap + LazyVim extras
     │   └── options.lua      # Vim options
     └── plugins/
         ├── coding.lua       # Coding helpers (inc-rename)
         ├── colorscheme.lua  # Theme (cursor-dark)
-        ├── editor.lua       # Editor plugins (telescope, disabled flash)
+        ├── editor.lua       # Editor plugins (telescope, diffview, disabled flash)
         ├── lsp.lua          # LSP and Mason config
         ├── treesitter.lua   # Syntax highlighting
         └── ui.lua           # UI plugins (noice, bufferline, lualine, incline, snacks)
