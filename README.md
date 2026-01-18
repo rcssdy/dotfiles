@@ -7,14 +7,16 @@ Personal dotfiles managed with symlinks.
 | Directory | Description |
 |-----------|-------------|
 | [nvim](./nvim) | Neovim config (LazyVim-based) |
-| [claude](./claude) | Claude Code config (custom skills, settings) |
+| [claude](./claude) | Claude Code config (settings, plugins) |
 | [opencode](./opencode) | OpenCode config (theme, providers) |
+| [agents](./agents) | Shared agent config (skills, commands, hooks) |
 
 ## Setup
 
 ```bash
 git clone https://github.com/rcssdy/dotfiles.git ~/dotfiles
 cd ~/dotfiles && ./setup.sh
+npx @iannuttall/dotagents  # Set up agent client symlinks
 ```
 
 ## Post-Setup
@@ -22,18 +24,17 @@ cd ~/dotfiles && ./setup.sh
 - **Neovim:** Launch `nvim` - plugins auto-install via Lazy.nvim
 - **Claude Code:** Machine-specific permissions auto-created in `settings.local.json`
 
-## Skills Management
+## Agent Configuration
 
-Skills are managed two ways:
+Agent config (skills, commands, hooks) is centralized in `agents/` and shared across clients via [dotagents](https://github.com/iannuttall/dotagents).
 
-| Type | Source | Update method |
-|------|--------|---------------|
-| Custom skills | This repo (`claude/skills/`) | Edit directly, commit |
-| Third-party skills | [Vercel skills CLI](https://github.com/vercel-labs/agent-skills) | `npx add-skill` |
+```
+~/.agents → ~/dotfiles/agents (source of truth)
+~/.claude/skills → ~/.agents/skills
+~/.opencode/skills → ~/.agents/skills
+```
 
-### Custom Skills (this repo)
-
-Stored in `claude/skills/`, symlinked to both agents:
+### Custom Skills
 
 | Skill | Description |
 |-------|-------------|
@@ -42,29 +43,19 @@ Stored in `claude/skills/`, symlinked to both agents:
 | `/rmslop` | Remove AI-generated code slop |
 | `/ui-skills` | UI/interface building constraints |
 
-### Third-Party Skills (via CLI)
-
-Managed by [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills):
+### Adding a New Skill
 
 ```bash
-npx add-skill vercel-labs/agent-skills
+mkdir -p agents/skills/<name>
+echo "Instructions here." > agents/skills/<name>/SKILL.md
 ```
 
-Installs directly to `~/.claude/skills/` and `~/.config/opencode/skill/`.
+Changes apply to all clients immediately via symlinks.
 
-| Skill | Description |
-|-------|-------------|
-| `vercel-react-best-practices` | React/Next.js performance guidelines |
-| `web-design-guidelines` | Web interface accessibility/UX review |
+### Re-linking Clients
 
-### Adding a New Custom Skill
+If symlinks break or you add a new client:
 
 ```bash
-# 1. Create skill
-mkdir -p claude/skills/<name>
-echo "---\nname: <name>\n---\n\nInstructions here." > claude/skills/<name>/SKILL.md
-
-# 2. Symlink to agents
-ln -s ~/dotfiles/claude/skills/<name> ~/.claude/skills/<name>
-ln -s ~/dotfiles/claude/skills/<name> ~/.config/opencode/skill/<name>
+npx @iannuttall/dotagents
 ```

@@ -1,1 +1,0 @@
-../../claude/skills/ui-skills/SKILL.md

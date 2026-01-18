@@ -1,1 +1,0 @@
-../../claude/skills/rmslop/SKILL.md
