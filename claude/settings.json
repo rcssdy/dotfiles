@@ -1,6 +1,9 @@
 {
   "enabledPlugins": {
-    "ralph-wiggum@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
   }
 }
