@@ -10,6 +10,8 @@ Personal dotfiles managed with symlinks.
 | [claude](./claude) | Claude Code config (settings, plugins) |
 | [opencode](./opencode) | OpenCode config (theme, providers) |
 | [agents](./agents) | Shared agent config (skills, commands, hooks) |
+| [zsh](./zsh) | Zsh config with oh-my-zsh |
+| [oh-my-posh](./oh-my-posh) | Prompt theme (takuya) |
 
 ## Setup
 
@@ -19,10 +21,20 @@ cd ~/dotfiles && ./setup.sh
 npx @iannuttall/dotagents  # Set up agent client symlinks
 ```
 
+## Dependencies
+
+```bash
+brew install oh-my-posh
+brew install --cask font-hack-nerd-font  # or another Nerd Font
+```
+
+Configure your terminal to use the Nerd Font (for prompt glyphs).
+
 ## Post-Setup
 
 - **Neovim:** Launch `nvim` - plugins auto-install via Lazy.nvim
 - **Claude Code:** Machine-specific permissions auto-created in `settings.local.json`
+- **Zsh:** Run `source ~/.zshrc` to reload
 
 ## Agent Configuration
 
