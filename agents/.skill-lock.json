@@ -1,0 +1,45 @@
+{
+  "version": 3,
+  "skills": {
+    "before-and-after": {
+      "source": "vercel-labs/before-and-after",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/before-and-after.git",
+      "skillPath": "skill/SKILL.md",
+      "skillFolderHash": "494b495538546c3a5594285e726970ff8f27a1ee",
+      "installedAt": "2026-02-03T07:32:07.478Z",
+      "updatedAt": "2026-02-03T07:32:07.478Z"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "c2f31172b6f256272305a5e6e7228b258446899f",
+      "installedAt": "2026-02-03T07:32:10.659Z",
+      "updatedAt": "2026-02-03T07:32:10.659Z"
+    },
+    "flightclaw": {
+      "source": "jackculpan/flightclaw",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/jackculpan/flightclaw.git",
+      "skillPath": "SKILL.md",
+      "skillFolderHash": "a0b9fc606e9d9304cd090a2d5b0d060c311e6e76",
+      "installedAt": "2026-02-14T16:29:53.028Z",
+      "updatedAt": "2026-02-17T10:45:37.372Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "codex",
+    "gemini-cli",
+    "github-copilot",
+    "kimi-cli",
+    "opencode",
+    "claude-code",
+    "openclaw"
+  ]
+}
