@@ -124,6 +124,11 @@ return {
         desc = "Lists LSP incoming calls for word under the cursor",
       },
       {
+        ";k",
+        "<cmd>Telescope keymaps<cr>",
+        desc = "Show keymaps",
+      },
+      {
         "sf",
         function()
           local telescope = require("telescope")
