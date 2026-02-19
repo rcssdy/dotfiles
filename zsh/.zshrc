@@ -16,7 +16,7 @@ source $ZSH/oh-my-zsh.sh
 # =============================================================================
 
 if command -v oh-my-posh &> /dev/null; then
-    eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/takuya.omp.json)"
+    eval "$(oh-my-posh init zsh --config ~/dotfiles/oh-my-posh/takuya.omp.json)"
 fi
 
 # =============================================================================
@@ -56,6 +56,7 @@ path=(
     $HOME/.composio
     $HOME/.codeium/windsurf/bin
     $HOME/.cache/lm-studio/bin
+    $HOME/.duckdb/cli/latest
     /Applications/Docker.app/Contents/Resources/bin
     /opt/homebrew/opt/postgresql@15/bin
     /opt/homebrew/bin
@@ -111,6 +112,7 @@ gem() { _load_rbenv; command gem "$@"; }
 # =============================================================================
 
 [[ -s "$HOME/.bun/_bun" ]] && source "$HOME/.bun/_bun" 2>/dev/null
+[[ -f "$HOME/.openclaw/completions/ironclaw.zsh" ]] && source "$HOME/.openclaw/completions/ironclaw.zsh"
 
 # =============================================================================
 # Aliases
@@ -129,6 +131,18 @@ alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
+
+# =============================================================================
+# Tools
+# =============================================================================
+
+eval "$(zoxide init zsh)"
+
+# =============================================================================
+# Functions
+# =============================================================================
+
+[[ -f "$HOME/dotfiles/zsh/.zsh_functions" ]] && source "$HOME/dotfiles/zsh/.zsh_functions"
 
 # =============================================================================
 # Local
