@@ -1,9 +1,10 @@
 {
-  "enabledPlugins": {
-    "code-simplifier@claude-plugins-official": true
-  },
   "attribution": {
     "commit": "",
     "pr": ""
+  },
+  "enabledPlugins": {
+    "code-simplifier@claude-plugins-official": true,
+    "compound-engineering@every-marketplace": true
   }
 }
