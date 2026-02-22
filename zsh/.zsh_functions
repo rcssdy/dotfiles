@@ -29,7 +29,7 @@ function nic() {
 
     # Go back to top pane, split right for opencode (30% width)
     tmux select-pane -t "$session_name" -U
-    tmux split-window -h -t "$session_name" -c "$PWD" -l 30%
+    tmux split-window -h -t "$session_name" -c "$PWD" -l 40%
 
     # Current pane is now top-right (opencode), launch it
     tmux send-keys 'opencode' C-m

@@ -4,7 +4,6 @@
     "pr": ""
   },
   "enabledPlugins": {
-    "code-simplifier@claude-plugins-official": true,
-    "compound-engineering@every-marketplace": true
+    "code-simplifier@claude-plugins-official": true
   }
 }

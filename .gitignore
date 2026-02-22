@@ -1,1 +1,11 @@
 .DS_Store
+
+# skills.sh agent symlink dirs (dotagents manages ours)
+/.claude/
+/.agent/
+/.factory/
+/.goose/
+/.kiro/
+/.windsurf/
+/skills/
+/skills-lock.json
