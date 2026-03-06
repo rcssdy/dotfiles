@@ -16,7 +16,7 @@ source $ZSH/oh-my-zsh.sh
 # =============================================================================
 
 if command -v oh-my-posh &> /dev/null; then
-    eval "$(oh-my-posh init zsh --config ~/dotfiles/oh-my-posh/takuya.omp.json)"
+    eval "$(oh-my-posh init zsh --config "$HOME/.config/oh-my-posh/takuya.omp.json")"
 fi
 
 # =============================================================================

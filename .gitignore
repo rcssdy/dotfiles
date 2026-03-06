@@ -1,5 +1,8 @@
 .DS_Store
 
+# Auto-generated system files
+.agents/skills/.system/
+
 # skills.sh agent symlink dirs (dotagents manages ours)
 /.claude/
 /.agent/

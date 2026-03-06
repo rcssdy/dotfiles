@@ -1,10 +1,16 @@
-#!/bin/bash
-DOTFILES="$(cd "$(dirname "$0")" && pwd)"
-ln -sf "$DOTFILES/nvim" ~/.config/nvim
-ln -sf "$DOTFILES/claude" ~/.claude
-ln -sf "$DOTFILES/opencode" ~/.config/opencode
-ln -sf "$DOTFILES/agents" ~/.agents
-ln -sf "$DOTFILES/zsh/.zshrc" ~/.zshrc
-ln -sf "$DOTFILES/oh-my-posh" ~/.config/oh-my-posh
+#!/usr/bin/env bash
 
-echo "Run 'npx @iannuttall/dotagents' to set up agent client symlinks"
+set -euo pipefail
+
+DOTFILES="$(cd "$(dirname "$0")" && pwd)"
+PACKAGES=(zsh tmux nvim oh-my-posh opencode)
+
+if ! command -v stow >/dev/null 2>&1; then
+  echo "Install GNU Stow first: brew install stow"
+  exit 1
+fi
+
+stow --restow --dir="$DOTFILES" --target="$HOME" "${PACKAGES[@]}"
+ln -sfn "$DOTFILES/agents" "$HOME/.agents"
+
+echo "Run 'npx @iannuttall/dotagents' if agent client symlinks need to be refreshed"

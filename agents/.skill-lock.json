@@ -198,6 +198,25 @@
       "skillFolderHash": "7cd0c064b5a62ffdc9cfff539a7b4d8d4a779208",
       "installedAt": "2026-02-22T23:13:00.000Z",
       "updatedAt": "2026-02-22T23:13:00.000Z"
+    },
+    "agent-browser": {
+      "source": "vercel-labs/agent-browser",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-browser.git",
+      "skillPath": "skills/agent-browser/SKILL.md",
+      "skillFolderHash": "88b7e785240d14ab80eb11abdd0cbd27b20055c6",
+      "pluginName": "agent-browser",
+      "installedAt": "2026-03-03T14:33:25.030Z",
+      "updatedAt": "2026-03-03T14:33:25.030Z"
+    },
+    "shadcn": {
+      "source": "shadcn/ui",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/shadcn/ui.git",
+      "skillPath": "skills/shadcn/SKILL.md",
+      "skillFolderHash": "2ae0a0c7f8ba9ab76d6c531e78d980663af90577",
+      "installedAt": "2026-03-06T20:21:25.806Z",
+      "updatedAt": "2026-03-06T20:21:25.806Z"
     }
   },
   "dismissed": {
@@ -205,6 +224,7 @@
   },
   "lastSelectedAgents": [
     "amp",
+    "cline",
     "codex",
     "cursor",
     "gemini-cli",
