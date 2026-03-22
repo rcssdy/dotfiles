@@ -19,6 +19,8 @@ cd ~/dotfiles
 ./setup.sh
 ```
 
+If `~/.agents` already exists as a real directory or file, move it aside first so setup can replace it with the repo-managed symlink.
+
 If agent client symlinks need to be refreshed:
 
 ```bash

@@ -91,10 +91,10 @@ _load_nvm() {
         export _NVM_LOADED=1
     fi
 }
-nvm() { _load_nvm; command nvm "$@"; }
-node() { _load_nvm; command node "$@"; }
-npm() { _load_nvm; command npm "$@"; }
-npx() { _load_nvm; command npx "$@"; }
+nvm() { unfunction nvm; _load_nvm; nvm "$@"; }
+node() { unfunction node; _load_nvm; node "$@"; }
+npm() { unfunction npm; _load_nvm; npm "$@"; }
+npx() { unfunction npx; _load_nvm; npx "$@"; }
 
 # Rbenv
 _load_rbenv() {
