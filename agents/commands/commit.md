@@ -1,16 +1,24 @@
 ---
-description: Helps write Git commit messages following the Conventional Commits specification. Use this skill when the user mentions git commits, commit messages, or preparing a commit.
+description: Create atomic commits with git-hunk using the repo's commit rules. Use this command when the user wants to commit changes, split work into clean commits, or prepare commit messages.
 ---
 
-Create a git commit now. Follow these steps:
+Create one or more git commits now. Use `git-hunk` for selection and commit execution.
 
-1. Run `git status` and `git diff --staged` (or `git diff` if nothing staged)
-2. Analyze the changes
-3. Stage files if needed (`git add`)
-4. Write a commit message using Conventional Commits format
-5. Execute the commit
+## Workflow
+
+1. Run `git status --short` and `git-hunk scan --mode stage --compact --json`
+2. Group the current diff into atomic commits
+3. Prefer `change_key` selectors from the scan output
+4. Dry-run each planned commit with `git-hunk commit --dry-run --json`
+5. Commit the exact selection with `git-hunk commit`
+6. Rescan after every successful commit before making the next one
+
+Do not use `git add -p`.
+Do not use plain `git add` for a mixed working tree.
+Do not combine unrelated changes in one commit.
 
 ## Format
+
 ```
 <type>(<scope>): <subject>
 
@@ -19,34 +27,36 @@ Create a git commit now. Follow these steps:
 [optional footer(s)]
 ```
 
-## Types
+## Allowed Types
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation only
-- `style`: Formatting, no code change
 - `refactor`: Code change, no new feature or fix
-- `perf`: Performance improvement
 - `test`: Adding/updating tests
 - `chore`: Build process, tooling, dependencies
 
 ## Rules
-- Subject under 50 characters
+
+- Use `git-hunk` for staging and committing
+- One logical change per commit
+- Subject under or equal to 72 characters
 - Imperative mood ("add" not "added")
 - No trailing period
 - Body wrapped at 72 characters
-- Scope is optional but recommended
+- Scope is required when it adds clarity
+- Use only the allowed types above
 
 ## Examples
+
 ```
-feat(auth): add OAuth login support
+fix(dotfiles): harden shell bootstrap behavior
 
-fix(api): handle null response from server
+refactor(nvim): trim dead config drift
 
-docs: update README installation steps
+docs(agents): expand setup and skill docs
 
-refactor(db): extract connection pooling logic
-
-chore(deps): bump lodash to 4.17.21
+feat(agents): add git-hunk commit workflow
 ```
 
 Begin immediately.

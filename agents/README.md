@@ -14,7 +14,7 @@ Use the root [README.md](../README.md) for machine bootstrap. Use this document 
 
 ## Command Prompts
 
-- [`commands/commit.md`](commands/commit.md): write and execute Conventional Commit-style commits
+- [`commands/commit.md`](commands/commit.md): split changes into atomic `git-hunk` commits using repo rules
 - [`commands/agent-browser.md`](commands/agent-browser.md): browser automation workflow and command reference
 - [`commands/rams.md`](commands/rams.md): accessibility and visual design review prompt
 
