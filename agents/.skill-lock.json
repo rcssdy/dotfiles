@@ -217,6 +217,15 @@
       "skillFolderHash": "2ae0a0c7f8ba9ab76d6c531e78d980663af90577",
       "installedAt": "2026-03-06T20:21:25.806Z",
       "updatedAt": "2026-03-06T20:21:25.806Z"
+    },
+    "expect": {
+      "source": "millionco/expect",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/millionco/expect.git",
+      "skillPath": ".agents/skills/expect/SKILL.md",
+      "skillFolderHash": "699f7c7ebbafd5872177b70a2a0693c6f939ca38",
+      "installedAt": "2026-03-26T22:54:59.105Z",
+      "updatedAt": "2026-03-26T22:54:59.105Z"
     }
   },
   "dismissed": {
@@ -224,13 +233,16 @@
   },
   "lastSelectedAgents": [
     "amp",
+    "antigravity",
     "cline",
     "codex",
     "cursor",
+    "deepagents",
     "gemini-cli",
     "github-copilot",
     "kimi-cli",
     "opencode",
+    "warp",
     "claude-code"
   ]
 }
