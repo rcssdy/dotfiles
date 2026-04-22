@@ -1,5 +1,5 @@
 ---
-name: "PowerPoint"
+name: powerpoint
 description: "Create, edit, render, verify, and export PowerPoint slide decks. Use when Codex needs to build or modify a deck, presentation deck, slide deck, slides, PowerPoint, PPT, or visually ambitious editable .pptx file."
 ---
 
