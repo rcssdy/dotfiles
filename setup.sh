@@ -6,7 +6,6 @@ DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 AGENTS_LINK="$HOME/.agents"
 CONFIG_HOME="$HOME/.config"
 CONFIG_DIRS=(ghostty nvim opencode tmux)
-ZSHRC_LINK="$HOME/.zshrc"
 
 link_path() {
   local source_path="$1"
@@ -43,7 +42,6 @@ for config_dir in "${CONFIG_DIRS[@]}"; do
 done
 
 link_path "$DOTFILES/agents" "$AGENTS_LINK"
-link_path "$DOTFILES/zsh/.zshrc" "$ZSHRC_LINK"
 
 echo "Dotfiles linked into ~/.config"
 echo "Run 'npx @iannuttall/dotagents' if agent client symlinks need to be refreshed"

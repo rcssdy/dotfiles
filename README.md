@@ -8,7 +8,6 @@ The layout is intentionally closer to [`craftzdog/dotfiles-public`](https://gith
 
 - `.config/fish/` contains the main shell config, OS-specific shell files, Fish functions, and Fish plugin declarations.
 - `.config/ghostty/`, `.config/nvim/`, `.config/tmux/`, and `.config/opencode/` mirror their final locations under `~/.config`.
-- `zsh/.zshrc` is a tiny compatibility shim that `exec`s Fish for machines still configured to launch Zsh.
 - `agents/` is the shared agent config linked to `~/.agents`.
 - `agents/skills` points to `../.agents/skills`, which stores the committed skill bodies used by the agent setup in this repo.
 - `agents/commands/` contains reusable agent command prompts.
@@ -41,7 +40,7 @@ brew bundle
 ./setup.sh
 ```
 
-If `~/.config/ghostty`, `~/.config/nvim`, `~/.config/tmux`, `~/.config/opencode`, `~/.zshrc`, or `~/.agents` already exist as real paths, move them aside first so setup can replace them with symlinks.
+If `~/.config/ghostty`, `~/.config/nvim`, `~/.config/tmux`, `~/.config/opencode`, or `~/.agents` already exist as real paths, move them aside first so setup can replace them with symlinks.
 
 `~/.config/fish` is handled more carefully: setup keeps the directory in place and links the repo-managed `config.fish`, OS-specific Fish files, `conf.d` snippets, function files, and `fish_plugins` into it so generated files like `fish_variables` and local machine snippets can stay machine-local.
 
@@ -50,7 +49,6 @@ If `~/.config/ghostty`, `~/.config/nvim`, `~/.config/tmux`, `~/.config/opencode`
 - Creates `~/.config` if needed
 - Links the managed Fish files into `~/.config/fish`
 - Symlinks the managed config directories from this repo into `~/.config`
-- Links a minimal `~/.zshrc` shim that hands off to Fish
 - Refreshes `~/.agents` to point at the repo-managed `agents/` directory
 - Stops early if a target path already exists as a non-symlink path
 
