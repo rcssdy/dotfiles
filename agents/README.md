@@ -9,7 +9,7 @@ Use the root [README.md](../README.md) for machine bootstrap. Use this document 
 - [`AGENTS.md`](AGENTS.md): shared agent behavior and repo-specific working rules
 - [`CLAUDE.md`](CLAUDE.md): Claude-specific instructions
 - [`commands/`](commands): reusable command prompts
-- `skills -> ../.agents/skills`: symlink to the committed skill bodies used by this repo
+- `skills -> ../.agents/skills`: symlink to the repo-owned custom and curated skill bodies used by this repo
 - [`.skill-lock.json`](.skill-lock.json): skill lock metadata used by the agent tooling
 
 ## Command Prompts
@@ -48,5 +48,6 @@ Use the root [README.md](../README.md) for machine bootstrap. Use this document 
 ## Notes
 
 - The repo-managed agent entrypoint is `agents/`, because that is what `setup.sh` links to `~/.agents`.
-- The actual skill bodies live under `.agents/skills/` and are referenced through the `agents/skills` symlink.
+- The actual repo-owned skill bodies live under `.agents/skills/` and are referenced through the `agents/skills` symlink.
+- Upstream runtime skill bundles such as `codex-primary-runtime` are intentionally not vendored here; they are expected to come from the globally installed agent runtime.
 - If agent client symlinks drift, refresh them with `npx @iannuttall/dotagents`.

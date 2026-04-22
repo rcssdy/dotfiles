@@ -9,7 +9,7 @@ The layout is intentionally closer to [`craftzdog/dotfiles-public`](https://gith
 - `.config/fish/` contains the main shell config, OS-specific shell files, Fish functions, and Fish plugin declarations.
 - `.config/ghostty/`, `.config/nvim/`, `.config/tmux/`, and `.config/opencode/` mirror their final locations under `~/.config`.
 - `agents/` is the shared agent config linked to `~/.agents`.
-- `agents/skills` points to `../.agents/skills`, which stores the committed skill bodies used by the agent setup in this repo.
+- `agents/skills` points to `../.agents/skills`, which stores the repo-owned custom and curated skill bodies used by this setup.
 - `agents/commands/` contains reusable agent command prompts.
 
 ## Tooling
